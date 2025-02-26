@@ -12,7 +12,7 @@ export class TaskComponent {
   @Input({required: true}) task!:Task;
   @Output() complete = new EventEmitter<string>();
 
-  onCompleteTask() {
+  onCompleteTaskEvent() {
     this.complete.emit(this.task.id)
   }
 }
