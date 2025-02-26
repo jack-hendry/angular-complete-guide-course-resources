@@ -4,6 +4,18 @@ import {
   Input,
   Output,
 } from '@angular/core';
+
+// type User = {
+//   id: string;
+//   name: string;
+//   avatar: string;
+// };
+
+interface User {
+  id: string;
+  name: string;
+  avatar: string;
+}
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -12,11 +24,7 @@ import {
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input({ required: true }) user!: {
-    id: string;
-    name: string;
-    avatar: string;
-  };
+  @Input({ required: true }) user!: User;
   // @Input({required: true}) id!: string;
   // @Input({ required: true }) avatar!: string; //will definetly be set
   // @Input({ required: true }) name!: string; //will definetly be set
