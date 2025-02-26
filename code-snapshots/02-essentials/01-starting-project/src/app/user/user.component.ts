@@ -8,8 +8,8 @@ import { Component, Input} from '@angular/core';
 })
 export class UserComponent {
 
-  @Input() avatar!: string; //will definetly be set 
-  @Input() name!: string; //will definetly be set 
+  @Input({required: true}) avatar!: string; //will definetly be set 
+  @Input({required: true}) name!: string; //will definetly be set 
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
