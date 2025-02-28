@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { UserInput } from './shared/calc.model';
+import { Injectable, signal } from '@angular/core';
+import { CalcType, UserInput } from './shared/calc.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvestmentResultsService {
-
+  resultData = signal<CalcType[]| undefined>(undefined);
   constructor() { }
 
   calculateInvestmentResults(UserInput: UserInput
@@ -32,7 +32,7 @@ export class InvestmentResultsService {
         totalAmountInvested: initialInvestment + anualInvestment * year,
       });
     }
-  
+    this.resultData.set(annualData);
     return annualData;
   }
 
