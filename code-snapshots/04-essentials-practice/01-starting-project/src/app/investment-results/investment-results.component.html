@@ -9,14 +9,14 @@
     </tr>
   </thead>
   <tbody>
-    @for (item of results; track $index) {
-        <tr>
-            <td>{{item.year }}</td>
-            <td>{{item.valueEndOfYear | currency }}</td>
-            <td>{{item.interest | currency}}</td>
-            <td>{{item.totalInterest | currency}}</td>
-            <td>{{item.totalAmountInvested | currency}}</td>
-        </tr>
+    @for (item of results(); track $index) {
+    <tr>
+      <td>{{ item.year }}</td>
+      <td>{{ item.valueEndOfYear | currency }}</td>
+      <td>{{ item.interest | currency }}</td>
+      <td>{{ item.totalInterest | currency }}</td>
+      <td>{{ item.totalAmountInvested | currency }}</td>
+    </tr>
     }
   </tbody>
 </table>

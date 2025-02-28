@@ -1,12 +1,9 @@
 <app-header />
 
-<app-calculator (calculation)="passCalculation($event)">
+<app-calculator (calculation)="passCalculation($event)"> </app-calculator>
 
-</app-calculator>
-
-
-@if (calculation) {
-    <app-investment-results [results]="calculation"/>
+@if (calculation()) {
+<app-investment-results [results]="calculation()" />
 } @else {
-    <p class="center">Please enter some values and press "Calculate".</p>
+<p class="center">Please enter some values and press "Calculate".</p>
 }
