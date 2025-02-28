@@ -3,3 +3,10 @@
 <app-calculator (calculation)="passCalculation($event)">
 
 </app-calculator>
+
+
+@if (calculation) {
+    <app-investment-results [results]="calculation"/>
+} @else {
+    <p class="center">Please enter some values and press "Calculate".</p>
+}
