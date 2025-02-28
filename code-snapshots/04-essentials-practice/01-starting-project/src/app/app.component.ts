@@ -7,9 +7,9 @@ import { InvestmentResultsComponent } from './investment-results/investment-resu
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  
   templateUrl: './app.component.html',
-  imports: [HeaderComponent, CalculatorComponent, InvestmentResultsComponent],
+  // imports: [HeaderComponent, CalculatorComponent, InvestmentResultsComponent],
 })
 export class AppComponent {
   calculation = signal<CalcType[] | undefined>(undefined);

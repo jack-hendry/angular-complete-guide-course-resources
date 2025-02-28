@@ -2,21 +2,18 @@ import { Injectable, signal } from '@angular/core';
 import { CalcType, UserInput } from './shared/calc.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InvestmentResultsService {
-  resultData = signal<CalcType[]| undefined>(undefined);
-  constructor() { }
+  resultData = signal<CalcType[] | undefined>(undefined);
+  constructor() {}
 
-  calculateInvestmentResults(UserInput: UserInput
-  ) {
-  const {initialInvestment,
-    anualInvestment,
-    expectedReturn,
-    duration} = UserInput;
+  calculateInvestmentResults(UserInput: UserInput) {
+    const { initialInvestment, anualInvestment, expectedReturn, duration } =
+      UserInput;
     const annualData = [];
     let investmentValue = initialInvestment;
-  
+
     for (let i = 0; i < duration; i++) {
       const year = i + 1;
       const interestEarnedInYear = investmentValue * (expectedReturn / 100);
@@ -35,5 +32,4 @@ export class InvestmentResultsService {
     this.resultData.set(annualData);
     return annualData;
   }
-
 }
