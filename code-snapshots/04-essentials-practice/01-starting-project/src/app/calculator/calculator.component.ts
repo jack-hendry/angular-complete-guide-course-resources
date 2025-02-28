@@ -24,7 +24,7 @@ duration: ${this.duration}
       `);
   }
 
-  submit(){
+  onSubmit(){
     console.log("submitted")
   }
 }
