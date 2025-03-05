@@ -15,5 +15,5 @@ export class DashboardItemComponent {
 
   img = input.required<{ src: string; alt: string }>();
   title = input.required<string>();
-  description = input.required<string>();
+  // description = input.required<string>();
 }
